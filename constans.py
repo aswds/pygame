@@ -1,6 +1,10 @@
 import pygame
 
+
+#Window options
 WIDTH, HEIGHT = 600, 800
+
+#Game options
 BALL_RADIUS = 10
 PADDLE_WIDTH, PADDLE_HEIGHT = 100, 20
 BRICK_WIDTH, BRICK_HEIGHT = 50, 20
