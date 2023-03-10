@@ -23,3 +23,12 @@ def main():
                     paddle.move_left()
                 if event.key == pygame.K_RIGHT:
                     paddle.move_right()
+ # Move the ball
+        ball.move()
+
+        # Check for collisions
+        ball.check_wall_collision()
+        ball.check_paddle_collision(paddle)
+        ball.check_brick_collision(bricks)
+        if ball.check_bottom_collision():
+            game_over = True
