@@ -42,3 +42,6 @@ def main():
             for j in range(BRICK_COLS):
                 if bricks[i][j] is not None:
                     bricks[i][j].draw()
+# Draw the score
+        score_text = font.render(f"Score: {ball.score}", True, WHITE)
+        WIN.blit(score_text, (10, 10))
