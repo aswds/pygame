@@ -45,7 +45,7 @@ def main():
 # Draw the score
         score_text = font.render(f"Score: {ball.score}", True, WHITE)
         WIN.blit(score_text, (10, 10))
-  # Check for game over
+ # Check game over
         if game_over:
             game_over_text = font.render(f"Game Over", True, WHITE)
             score_text = font.render(f"Score: {ball.score}", True, RED)
@@ -54,3 +54,9 @@ def main():
             pygame.display.update()
             pygame.time.delay(1000)
             running = False
+ # Quit Pygame
+    pygame.quit()
+
+
+if name == 'main':
+    main()
