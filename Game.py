@@ -45,3 +45,12 @@ def main():
 # Draw the score
         score_text = font.render(f"Score: {ball.score}", True, WHITE)
         WIN.blit(score_text, (10, 10))
+  # Check for game over
+        if game_over:
+            game_over_text = font.render(f"Game Over", True, WHITE)
+            score_text = font.render(f"Score: {ball.score}", True, RED)
+            WIN.blit(game_over_text, (WIDTH / 2 - FONT_SIZE * 3, HEIGHT / 2 - FONT_SIZE))
+            WIN.blit(score_text, (WIDTH / 2 - FONT_SIZE * 3, HEIGHT / 2 + FONT_SIZE))
+            pygame.display.update()
+            pygame.time.delay(1000)
+            running = False
