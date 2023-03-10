@@ -32,3 +32,13 @@ def main():
         ball.check_brick_collision(bricks)
         if ball.check_bottom_collision():
             game_over = True
+# Clear the screen
+        WIN.fill(BLACK)
+
+        # Draw the objects
+        ball.draw()
+        paddle.draw()
+        for i in range(BRICK_ROWS):
+            for j in range(BRICK_COLS):
+                if bricks[i][j] is not None:
+                    bricks[i][j].draw()
