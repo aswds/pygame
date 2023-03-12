@@ -1,8 +1,13 @@
-import pygame
 from Classes.Ball import Ball
 from Classes.Brick import Brick
 from Classes.Paddle import Paddle
 from constans import *
+import pygame
+
+# Initialize Pygame
+pygame.init()
+pygame.font.init()
+
 
 def main():
     ball = Ball(WIDTH / 2, HEIGHT - 200, BALL_RADIUS, BLUE, 0.2, -45)
@@ -23,7 +28,7 @@ def main():
                     paddle.move_left()
                 if event.key == pygame.K_RIGHT:
                     paddle.move_right()
- # Move the ball
+        # Move the ball
         ball.move()
 
         # Check for collisions
@@ -32,7 +37,7 @@ def main():
         ball.check_brick_collision(bricks)
         if ball.check_bottom_collision():
             game_over = True
-# Clear the screen
+        # Clear the screen
         WIN.fill(BLACK)
 
         # Draw the objects
@@ -42,10 +47,14 @@ def main():
             for j in range(BRICK_COLS):
                 if bricks[i][j] is not None:
                     bricks[i][j].draw()
-# Draw the score
+        # Draw the score
         score_text = font.render(f"Score: {ball.score}", True, WHITE)
         WIN.blit(score_text, (10, 10))
- # Check game over
+
+        # Update the screen
+        pygame.display.update()
+
+        # Check game over
         if game_over:
             game_over_text = font.render(f"Game Over", True, WHITE)
             score_text = font.render(f"Score: {ball.score}", True, RED)
@@ -54,9 +63,9 @@ def main():
             pygame.display.update()
             pygame.time.delay(1000)
             running = False
- # Quit Pygame
+        # Quit Pygame
     pygame.quit()
 
 
-if name == 'main':
+if __name__ == '__main__':
     main()
