@@ -1,7 +1,9 @@
 import pygame
 from constans import WIN
+
+
 class Brick:
-    def init(self, x, y, width, height, color):
+    def __init__(self, x, y, width, height, color):
         self.x = x
         self.y = y
         self.width = width

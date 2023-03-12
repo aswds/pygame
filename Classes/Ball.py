@@ -1,5 +1,4 @@
-import pygame
-from constans import WIN, BRICK_COLS, BRICK_ROWS, BRICK_HEIGHT, BRICK_WIDTH, WIDTH, HEIGHT
+from constans import *
 
 
 class Ball:
@@ -12,6 +11,7 @@ class Ball:
         self.angle = angle
         self.dx = speed
         self.dy = -speed
+        self.score = 0
 
     def draw(self):
         pygame.draw.circle(WIN, self.color, (int(self.x), int(self.y)), self.radius)
@@ -42,4 +42,3 @@ class Ball:
         if self.y + self.radius > HEIGHT:
             return True
         return False
-hi
