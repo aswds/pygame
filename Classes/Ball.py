@@ -42,3 +42,4 @@ class Ball:
         if self.y + self.radius > HEIGHT:
             return True
         return False
+hi
