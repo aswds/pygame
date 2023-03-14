@@ -9,8 +9,8 @@ pygame.init()
 pygame.font.init()
 
 
-def main():
-    ball = Ball(WIDTH / 2, HEIGHT - 200, BALL_RADIUS, BLUE, 0.2, -45)
+def main(ball_speed):
+    ball = Ball(WIDTH / 2, HEIGHT - 200, BALL_RADIUS, BLUE, ball_speed, -45)
     paddle = Paddle(WIDTH / 2 - PADDLE_WIDTH / 2, HEIGHT - PADDLE_HEIGHT, PADDLE_WIDTH, PADDLE_HEIGHT, GREEN, 50)
     bricks = [[Brick(j * (BRICK_WIDTH + BRICK_MARGIN) + BRICK_MARGIN, i * (BRICK_HEIGHT + BRICK_MARGIN) + BRICK_MARGIN,
                      BRICK_WIDTH, BRICK_HEIGHT, RED) for j in range(BRICK_COLS)] for i in range(BRICK_ROWS)]
@@ -66,6 +66,3 @@ def main():
         # Quit Pygame
     pygame.quit()
 
-
-if __name__ == '__main__':
-    main()

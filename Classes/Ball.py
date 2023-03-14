@@ -1,3 +1,5 @@
+import math
+
 from constans import *
 
 
@@ -37,6 +39,7 @@ class Ball:
                 if brick is not None and self.y - self.radius < brick.y + BRICK_HEIGHT and self.x + self.radius > brick.x and self.x - self.radius < brick.x + BRICK_WIDTH:
                     self.dy = -self.dy
                     bricks[i][j] = None
+                    self.score += 10
 
     def check_bottom_collision(self):
         if self.y + self.radius > HEIGHT:
