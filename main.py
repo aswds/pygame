@@ -1,6 +1,6 @@
 import pygame
 
-from Game import main
+from main_menu import main_menu
 
 if __name__ == "__main__":
-    main()
+    main_menu()
