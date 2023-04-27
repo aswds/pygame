@@ -1,3 +1,11 @@
+import os
+try:
+    os.environ["DISPLAY"]
+except:
+    os.environ["SDL_VIDEODRIVER"] = "dummy"
+
+    
+    
 import pytest
 import os
 try:
@@ -13,6 +21,9 @@ from Classes.Paddle import Paddle
 from constans import *
 import pygame
 from main import main_menu as main
+
+
+
 
 # Initialize Pygame
 pygame.init()
