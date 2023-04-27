@@ -1,5 +1,12 @@
-import pytest
 import os
+try:
+    os.environ["DISPLAY"]
+except:
+    os.environ["SDL_VIDEODRIVER"] = "dummy"
+
+    
+    
+import pytest
 from Classes.Ball import Ball
 from Classes.Brick import Brick
 from Classes.Paddle import Paddle
@@ -8,10 +15,7 @@ import pygame
 from main import main_menu as main
 
 
-try:
-    os.environ["DISPLAY"]
-except:
-    os.environ["SDL_VIDEODRIVER"] = "dummy"
+
 
 # Initialize Pygame
 pygame.init()
