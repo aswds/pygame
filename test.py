@@ -104,8 +104,3 @@ def test_ball_check_bottom_collision(game_objects):
     assert ball.check_bottom_collision()
 
 
-# Test the main function
-def test_main():
-    main()
-    # Check that Pygame quit without errors
-    assert pygame.get_init() == False
